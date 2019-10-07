@@ -15,7 +15,7 @@ export default function New({ history }) {
       return thumbnail ? URL.createObjectURL(thumbnail) : null;
     },
     [thumbnail]
-  )
+  ) 
 
   async function handleSubmit(event) {
     event.preventDefault();
