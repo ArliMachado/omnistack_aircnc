@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, Image, StyleSheet, AsyncStorage } from "react-native";
+import {
+  SafeAreaView,
+  ScrollView,
+  Image,
+  StyleSheet,
+  AsyncStorage
+} from "react-native";
 
 import logo from "../assets/logo.png";
 
@@ -20,7 +26,11 @@ export default function List() {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={logo} />
-      <SpotList />
+      <ScrollView>
+        {techs.map(tech => (
+          <SpotList key={tech} tech={tech} />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -34,6 +44,6 @@ const styles = StyleSheet.create({
     height: 32,
     resizeMode: "contain",
     alignSelf: "center",
-    marginTop: 30
+    marginTop: 10
   }
 });
