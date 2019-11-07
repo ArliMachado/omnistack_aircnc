@@ -26,7 +26,7 @@ module.exports = {
       user: user_id,
       thumbnail: filename,
       company,
-      techs: techs.split(",").map(tech => tech.trim()),
+      techs: techs.split(',').map(tech => tech.trim().toUpperCase()),
       price
     });
 
